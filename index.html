@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>Qr code generator</title>
+        <link rel="stylesheet" href="style/styleIndex.css">
+        <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+    </head>
+    <body>
+        <div class="main">
+            <section class="header">
+                <h1 class="title">Qr code generator</h1>
+                <h2 class="subtitle">Create your own QR code with an image</h2>
+            </section>
+            <section class="generator">
+                <form class="create" id="createI" onsubmit="return createQR()">
+                    <h1>Generator</h1>
+                    <label for="url"><b>URL:</b></label>
+                    <input type="text" name=url placeholder="https://www.example.com/" required><br>
+                    <label for="dotsColor"><b>Color of the dots:</b></label>
+                    <input type="color" name=dotsColor required><br>
+                    <label for="dotsType"><b>Types of dots:</b></label>
+                    <select name="dotsType">
+                        <option value="rounded" selected>rounded</option>
+                        <option value="dots">dots</option>
+                        <option value="classy">classy</option>
+                        <option value="classy-rounded">classy-rounded</option>
+                        <option value="square">square</option>
+                        <option value="extra-rounded">extra-rounded</option>
+                    </select>
+                    <br>
+                    <label for="backgroundColor"><b>Color of the background:</b></label>
+                    <input type="color" name=backgroundColor required value="#ffffff"><br>
+                    <label for="image"><b>URL of the image:</b></label>
+                    <input type="text" name="image"><br>
+                    <label for="size"><b>Size:</b></label>
+                    <select name="size">
+                        <option value="100">100x100</option>
+                        <option value="200">200x200</option>
+                        <option value="300" selected>300x300</option>
+                        <option value="400">400x400</option>
+                        <option value="500">500x500</option>
+                        <option value="600">600x600</option>
+                        <option value="700">700x700</option>
+                    </select>
+                    <br>
+                    <label for="format"><b>Save as:</b></label>
+                    <select name="format">
+                        <option value="svg" selected>svg</option>
+                        <option value="png">png</option>
+                    </select>
+                    <br>
+                    <input type="submit" value="Create">
+                </form>
+            </section>
+            <script type="text/javascript">
+                function createQR(){
+                    var url = document.forms["createI"]["url"].value;
+                    var dotsColor = document.forms["createI"]["dotsColor"].value;
+                    var dotsType = document.forms["createI"]["dotsType"].value;
+                    var image = document.forms["createI"]["image"].value;
+                    var size = document.forms["createI"]["size"].value;
+                    var backgroundColor = document.forms["createI"]["backgroundColor"].value;
+                    var format = document.forms["createI"]["format"].value;
+                    const qrCode = new QRCodeStyling({
+                        width: size,
+                        height: size,
+                        type: format,
+                        data: url,
+                        image: image,//"https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
+                        dotsOptions: {
+                            color: dotsColor,
+                            type: dotsType
+                        },
+                        backgroundOptions: {
+                            color: backgroundColor,
+                        },
+                        imageOptions: {
+                            crossOrigin: "anonymous",
+                            margin: 20
+                        }
+                    });
+                    qrCode.download({ name: "qr", extension: format });
+                    return false
+                }
+            </script>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    background: #ccc;
+    overflow: hidden;
+}
+.header{
+    background-image: url("../images/descarga.jpg");
+    background-position: left;
+    background-size: cover;
+    min-height: 200px;
+
+}
+.title{
+    color: whitesmoke;
+    padding-top: 50px;
+    text-align: center;
+    text-shadow: 5px 2px 2px rgb(49, 47, 61);
+    font-size: 75px;
+}
+.subtitle{
+    color: whitesmoke;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    text-align: center;
+    font-size: 35px;
+}
+.generator{
+    overflow: hidden;
+    background: #ccc;
+    padding-left: 40px;
+    font-size: 30;
+}
+.generator input[type="text"]{
+    width: 30%;
+    margin: 10px auto;
+    min-width: 100px;
+    max-width: 300px;
+    text-align: center;
+    height: 20px;
+    font-size: 100%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.generator h1{
+    margin-top: 25px;
+    font-size: 25px;
+}
+.generator input[type="color"]{
+    width: 30%;
+    margin: 10px auto;
+    min-width: 100px;
+    max-width: 150px;
+    text-align: center;
+    height: 25px;
+    font-size: 130%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.generator input[type="color"], label{
+    width: 30%;
+    margin: 10px auto;
+    min-width: 100px;
+    max-width: 150px;
+    text-align: center;
+    height: 25px;
+    font-size: 130%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.generator input[label="size"]{
+    width: 30%;
+    margin: 10px auto;
+    min-width: 100px;
+    max-width: 150px;
+    text-align: center;
+    height: 25px;
+    font-size: 130%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.generator input[type="submit"]{
+    text-align: center;
+    width:10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 45%;
+    height: 25px;
+    font-size: 100%;
+}
+
+
